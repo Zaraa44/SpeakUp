@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interest | Speak Up</title>
+    <link rel="stylesheet" href="../assets/stylesheet/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="../assets/stylesheet/styles.css" />
+</head>
+<body class="register-bg has-text-white is-flex is-flex-direction-column is-justify-content-space-between">
+
+<!-- Titel en teller -->
+<section class="section pt-6 pb-0">
+    <div class="container" style="max-width: 440px;">
+        <div class="mb-3">
+            <h1 class="title is-4 has-text-white mb-1">Interests</h1>
+            <div class="is-flex is-justify-content-space-between is-align-items-center">
+                <p class="is-size-7 has-text-grey-light">Select your interests</p>
+                <p id="interest-counter" class="has-text-white is-size-7 has-text-weight-bold">0/4</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interest selectie -->
+<section class="section pt-0 pb-0">
+    <div class="container" style="max-width: 440px;">
+        <div class="interest-wrapper">
+            <div class="columns is-multiline is-mobile is-centered is-gapless interest-grid">
+                <!-- Voorbeeldknop -->
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/Basketball.png" alt="Basketball" />
+                    </button>
+                </div>
+
+                <!-- Kopieer dit blok 15 keer met andere afbeeldingen -->
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/Chess.png" alt="Chess" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/blocks.png" alt="Blocks" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/bowling.png" alt="Bowling" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/cooking.png" alt="Cooking" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/games.png" alt="Games" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/movies.png" alt="Movies" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/music.png" alt="Music" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/piano.png" alt="Piano" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/puzzles.png" alt="Puzzles" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/Reading.png" alt="Reading" />
+                    </button>
+                </div>
+
+                <div class="column is-one-quarter">
+                    <button class="interest-image-tile">
+                        <img src="../assets/img/interests/singing.png" alt="Singing" />
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulier -->
+        <form id="interest-form">
+            <div class="field mt-5">
+                <label class="label is-size-7 has-text-white">What is your favourite movie or book?</label>
+                <div class="control">
+                    <input class="input transparent-input" type="text" name="favouriteBook" placeholder="e.g. Harry Potter" required />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label has-text-white is-size-7">What is your favourite game or sport?</label>
+                <div class="control">
+                    <input class="input transparent-input" type="text" name="favouriteGame" placeholder="e.g. Basketball" required />
+                </div>
+            </div>
+
+            <!-- Submit knop -->
+            <div class="field mt-4">
+                <div class="control">
+                    <button type="submit" class="button next-button is-fullwidth has-text-weight-bold" disabled>
+                        Next step
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Step-indicator -->
+<footer class="has-text-centered pb-5 pt-3">
+    <div class="step-indicator">
+        <span class="step active">1</span>
+        <span class="arrow">→</span>
+        <span class="step">2</span>
+        <span class="arrow">→</span>
+        <span class="step">3</span>
+    </div>
+</footer>
+
+<!-- JS Logic -->
+<script>
+    const tiles = document.querySelectorAll('.interest-image-tile');
+    const counter = document.getElementById('interest-counter');
+    const form = document.getElementById('interest-form');
+    const nextButton = form.querySelector('button[type="submit"]');
+    const inputs = form.querySelectorAll('input');
+
+    function updateFormState() {
+        const selected = document.querySelectorAll('.interest-image-tile.selected');
+        counter.textContent = `${selected.length}/4`;
+
+        const allInputsFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+        nextButton.disabled = !(selected.length === 4 && allInputsFilled);
+    }
+
+    tiles.forEach(tile => {
+        tile.addEventListener('click', () => {
+            if (tile.classList.contains('selected')) {
+                tile.classList.remove('selected');
+            } else {
+                const currentSelected = document.querySelectorAll('.interest-image-tile.selected');
+                if (currentSelected.length < 4) {
+                    tile.classList.add('selected');
+                }
+            }
+            updateFormState();
+        });
+    });
+
+    inputs.forEach(input => {
+        input.addEventListener('input', updateFormState);
+    });
+</script>
+
+</body>
+</html>

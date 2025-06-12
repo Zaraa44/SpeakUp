@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character | Speak Up</title>
+    <link rel="stylesheet" href="../assets/stylesheet/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="../assets/stylesheet/styles.css" />
+</head>
+<body class="register-bg has-text-white is-flex is-flex-direction-column is-justify-content-space-between">
+
+<section class="section pt-6 pb-0">
+    <div class="container" style="max-width: 440px;">
+        <h1 class="title is-4 has-text-white mb-4">Make your character</h1>
+
+        <div class="character-customization is-flex is-align-items-start mb-4">
+            <div class="color-options">
+                <div class="color-option bg-teal" data-img="../assets/img/characters/CharGroen.png"></div>
+                <div class="color-option bg-yellow" data-img="../assets/img/characters/CharGeel.png"></div>
+                <div class="color-option bg-blue" data-img="../assets/img/characters/CharBlauw.png"></div>
+                <div class="color-option bg-red" data-img="../assets/img/characters/CharRood.png"></div>
+            </div>
+
+            <div class="character-box">
+                <div class="character-layer-container">
+                    <img id="character-preview" src="../assets/img/characters/CharBlauw.png" alt="Character Base" />
+                    <img id="face-layer" class="face-layer" src="../assets/img/characters/Lashesslay.png" alt="Face" />
+                    <img id="hat-layer" class="hat-layer" src="../assets/img/hats/Hoed2.png" alt="Hat" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Faces -->
+        <div class="mb-4">
+            <label class="label is-size-7 has-text-white">Faces</label>
+            <div class="face-options is-flex is-justify-content-space-between">
+                <div class="face-option" data-img="../assets/img/characters/Annoyed.png"></div>
+                <div class="face-option" data-img="../assets/img/characters/Deaded.png"></div>
+                <div class="face-option" data-img="../assets/img/characters/Happy.png"></div>
+                <div class="face-option" data-img="../assets/img/characters/Lashesslay.png"></div>
+            </div>
+        </div>
+
+        <!-- Hats -->
+        <div class="mb-5">
+            <label class="label is-size-7 has-text-white">Hats</label>
+            <div class="hat-options is-flex is-justify-content-space-between">
+                <div class="hat-option" data-img="../assets/img/hats/Hoed1.png"></div>
+                <div class="hat-option" data-img="../assets/img/hats/Hoed2.png"></div>
+                <div class="hat-option" data-img="../assets/img/hats/Hoed3.png"></div>
+                <div class="hat-option" data-img="../assets/img/hats/Hoed4.png"></div>
+            </div>
+        </div>
+
+        <!-- Next button -->
+        <div class="field">
+            <div class="control">
+                <button class="button mt-6 next-button is-fullwidth has-text-weight-bold">Next step</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="has-text-centered pb-5 pt-3">
+    <div class="step-indicator">
+        <span class="step">1</span>
+        <span class="arrow">→</span>
+        <span class="step">2</span>
+        <span class="arrow">→</span>
+        <span class="step active">3</span>
+    </div>
+</footer>
+
+<script>
+    const preview = document.getElementById("character-preview");
+    const faceLayer = document.getElementById("face-layer");
+    const hatLayer = document.getElementById("hat-layer");
+
+    // Color
+    document.querySelectorAll('.color-option').forEach(option => {
+        option.addEventListener('click', () => {
+            document.querySelectorAll('.color-option').forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            preview.src = option.dataset.img;
+        });
+    });
+
+    // Face
+    document.querySelectorAll('.face-option').forEach(face => {
+        face.addEventListener('click', () => {
+            document.querySelectorAll('.face-option').forEach(f => f.classList.remove('selected'));
+            face.classList.add('selected');
+            faceLayer.src = face.dataset.img;
+        });
+    });
+
+    // Hat
+    document.querySelectorAll('.hat-option').forEach(hat => {
+        hat.addEventListener('click', () => {
+            document.querySelectorAll('.hat-option').forEach(h => h.classList.remove('selected'));
+            hat.classList.add('selected');
+            hatLayer.src = hat.dataset.img;
+        });
+    });
+
+    // Toon afbeelding op face/hats als achtergrond
+    document.querySelectorAll('.face-option').forEach(option => {
+        const img = option.dataset.img;
+        option.style.backgroundImage = `url('${img}')`;
+    });
+
+    document.querySelectorAll('.hat-option').forEach(option => {
+        const img = option.dataset.img;
+        option.style.backgroundImage = `url('${img}')`;
+    });
+
+</script>
+
+</body>
+</html>

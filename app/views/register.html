@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Speak Up</title>
+    <link rel="stylesheet" href="../assets/stylesheet/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="../assets/stylesheet/styles.css" />
+</head>
+<body class="register-bg has-text-white is-flex is-flex-direction-column is-justify-content-space-between">
+
+<!-- Pagina-titel -->
+<section class="section pt-6">
+    <div class="container" style="max-width: 440px;">
+        <div class="mb-5">
+            <h1 class="title is-4 has-text-white mb-1">Create your account</h1>
+            <p class="is-size-7 mb-5">Log in to Speak Up using your school account</p>
+        </div>
+    </div>
+</section>
+
+<!-- Paginainhoud -->
+<section class="section">
+    <div class="container px-4" style="max-width: 440px;">
+        <form class="mt-6" action="interest.html" method="GET">
+            <div class="field">
+                <label class="label has-text-white is-size-7">Email</label>
+                <div class="control">
+                    <input class="input transparent-input" type="email" name="email" placeholder="School email" required />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label has-text-white is-size-7">Password</label>
+                <div class="control">
+                    <input class="input transparent-input" type="password" name="password" placeholder="••••••••" required />
+                </div>
+            </div>
+
+            <!-- Volgende knop -->
+            <div class="field mt-6">
+                <div class="control">
+                    <button type="submit" class="button next-button is-fullwidth has-text-weight-bold">
+                        Next step
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Link naar login -->
+        <p class="has-text-centered is-size-7 mt-4">
+            <a href="login.html" class="has-text-white is-underlined">
+                I have logged in before
+            </a>
+        </p>
+    </div>
+</section>
+
+<!-- Step-indicator -->
+<footer class="has-text-centered pb-5 pt-3">
+    <div class="step-indicator">
+        <span class="step active">1</span>
+        <span class="arrow">→</span>
+        <span class="step">2</span>
+        <span class="arrow">→</span>
+        <span class="step">3</span>
+    </div>
+</footer>
+
+</body>
+</html>
