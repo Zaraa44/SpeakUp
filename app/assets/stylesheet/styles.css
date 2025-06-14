@@ -230,3 +230,118 @@ html, body {
     border-color: #ffcc00;
     transform: scale(1.1);
 }
+
+.overview-interests img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+/* Achtergrondkleur (komt uit bestaande register-bg) */
+body {
+    background: linear-gradient(to bottom, #1f052e, #3c1458);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Play-knop */
+.play-button {
+    background-color: #3c5973;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.5rem auto;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.play-button:hover {
+    background-color: #486c8c;
+}
+
+.play-button i {
+    font-size: 2rem;
+}
+
+/* Game cards */
+.game-card {
+    background: linear-gradient(to right, #3ac1c9, #2980b9);
+    border-radius: 10px;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.game-card .icon-text {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Sterpictogram */
+.highlight-icon {
+    position: absolute;
+    left: -10px;
+    top: 8px;
+    width: 24px;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3c1458;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.bottom-nav .nav-item {
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.bottom-nav .nav-item i {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.bottom-nav .active {
+    color: #ffcc00;
+}
+
+.game-button {
+    min-height: 100px;
+    min-width: 300px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game-button:hover {
+    transform: translateY(-2px);
+}
+

@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview | Speak Up</title>
+    <link rel="stylesheet" href="../assets/stylesheet/bulma/css/bulma.min.css" />
+    <link rel="stylesheet" href="../assets/stylesheet/styles.css" />
 </head>
-<body>
+<body class="register-bg has-text-white">
+
+<section class="section pt-6 pb-4">
+    <div class="container" style="max-width: 440px;">
+
+        <!-- Titel -->
+        <h1 class="title is-4 has-text-white has-text-centered">Overview</h1>
+
+        <!-- Avatar -->
+        <div class="box has-text-centered" style="border: 2px solid white; border-radius: 10px;">
+            <img src="../assets/img/characters/CharBlauw.png" alt="Avatar" style="width: 80px; height: 80px;" />
+        </div>
+
+        <!-- Interesses -->
+        <p class="mt-4 mb-2 has-text-weight-semibold is-size-6">Your interests</p>
+        <div class="interest-wrapper overview-interests is-flex is-flex-wrap-wrap is-justify-content-center mb-5">
+            <img src="../assets/img/interests/Basketball.png" alt="Basketball" />
+            <img src="../assets/img/interests/Chess.png" alt="Chess" />
+            <img src="../assets/img/interests/blocks.png" alt="Blocks" />
+            <img src="../assets/img/interests/bowling.png" alt="Bowling" />
+        </div>
+
+        <!-- Favoriete boek/film -->
+        <div class="field">
+            <label class="label has-text-white is-size-7">Favourite book or movie:</label>
+            <p>Harry Potter</p>
+        </div>
+
+        <!-- Favoriete sport/game -->
+        <div class="field">
+            <label class="label has-text-white is-size-7">Favourite game or sport:</label>
+            <p>Basketball</p>
+        </div>
+
+        <!-- Confirm knop -->
+        <form action="home.html" method="post" class="mt-5">
+            <button type="submit" class="button next-button is-fullwidth has-text-weight-bold">
+                Confirm
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- Step-indicator -->
+<footer class="has-text-centered pb-5">
+    <div class="step-indicator">
+        <span class="step active">1</span>
+        <span class="arrow">→</span>
+        <span class="step active">2</span>
+        <span class="arrow">→</span>
+        <span class="step">3</span>
+    </div>
+</footer>
 
 </body>
 </html>
