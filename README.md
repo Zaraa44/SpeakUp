@@ -7,22 +7,22 @@ De projectmappen zijn als volgt georganiseerd:
 ![img.png](img.png)
 
 
-## 🧱 Gebruikte Technologieën
+## Gebruikte Technologieën
 
-### ✅ HTML5
+###  HTML5
 Structuur en inhoud van alle pagina's.
 
-### ✅ CSS3 + Bulma
+### CSS3 + Bulma
 - **Bulma** is een modern, responsief CSS-framework gebaseerd op Flexbox.
 - Voorbeelden: `is-flex`, `button`, `is-fullwidth`, `has-text-centered`, enz.
 - Gecombineerd met een eigen stylesheet (`styles.css`) waarin kleuren, knoppen, avatars en navigatie opgemaakt zijn.
 
-### ✅ Font Awesome
+### Font Awesome
 Gebruikt voor iconen in buttons, kaarten, stappenbalk en navigatie (`<i class="fas fa-user">` etc.).
 
 ---
 
-## ✨ Functionaliteit per view
+## Functionaliteit per view
 
 ### `interest.html`
 - Gebruiker kiest **maximaal 4 interesses** (bijv. sport, muziek).
@@ -51,7 +51,7 @@ Gebruikt voor iconen in buttons, kaarten, stappenbalk en navigatie (`<i class="f
 
 ---
 
-## 🧠 JavaScript Overzicht
+## JavaScript Overzicht
 
 - 📌 **interests:** telt geselecteerde interesses, schakelt de knop in/uit.
 - 📌 **character builder:** verandert live het karakterbeeld op basis van keuze.
@@ -60,7 +60,7 @@ Gebruikt voor iconen in buttons, kaarten, stappenbalk en navigatie (`<i class="f
 
 ---
 
-## 🧪 Werking
+## Werking
 
 1. **Startpagina (`index.html`)**
     - Kies voor 'New User' of 'Login' (via `form` met `POST`).
@@ -77,7 +77,7 @@ Gebruikt voor iconen in buttons, kaarten, stappenbalk en navigatie (`<i class="f
 
 ---
 
-## 🎨 Designprincipes
+## Designprincipes
 
 - **Mobile-first** ontworpen.
 - Donker kleurenschema (paars en verloopkleuren).
@@ -86,7 +86,7 @@ Gebruikt voor iconen in buttons, kaarten, stappenbalk en navigatie (`<i class="f
 
 ---
 
-## 🔮 Mogelijke uitbreiding
+## Mogelijke uitbreiding
 
 - LocalStorage voor tijdelijke opslag van keuzes.
 - Backend-integratie met Node.js of Flask.
