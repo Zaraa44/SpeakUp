@@ -4,27 +4,7 @@
 
 De projectmappen zijn als volgt georganiseerd:
 
-SpeakUp/
-├── app/
-│ ├── assets/
-│ │ ├── img/
-│ │ │ ├── characters/ # Afbeeldingen voor avatars
-│ │ │ ├── hats/ # Accessoires voor avatars
-│ │ │ ├── interests/ # Icons voor interesses
-│ │ │ └── logo/ # Logo van de applicatie
-│ │ └── stylesheet/
-│ │ ├── bulma/ # Bulma CSS-framework
-│ │ └── styles.css # Eigen opmaak en component-styling
-│ └── views/
-│ ├── index.html # Startpagina
-│ ├── register.html # Nieuw gebruiker starten
-│ ├── login.html # Inloggen
-│ ├── interest.html # Interesses kiezen
-│ ├── character.html # Karakter bouwen
-│ ├── overview.html # Samenvatting van keuzes
-│ ├── home.html # Dashboard
-│ ├── play.html # Spelkeuze
-├── README.md # Deze documentatie
+![img.png](img.png)
 
 
 ## 🧱 Gebruikte Technologieën
