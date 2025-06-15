@@ -27,83 +27,26 @@
     <div class="container" style="max-width: 440px;">
         <div class="interest-wrapper">
             <div class="columns is-multiline is-mobile is-centered is-gapless interest-grid">
-                <!-- Voorbeeldknop -->
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/Basketball.png" alt="Basketball" />
-                    </button>
-                </div>
 
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/Chess.png" alt="Chess" />
-                    </button>
-                </div>
+                <!-- Alle interesses -->
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/Basketball.png" alt="Basketball" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/Chess.png" alt="Chess" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/blocks.png" alt="Blocks" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/bowling.png" alt="Bowling" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/cooking.png" alt="Cooking" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/games.png" alt="Games" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/movies.png" alt="Movies" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/music.png" alt="Music" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/piano.png" alt="Piano" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/puzzles.png" alt="Puzzles" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/Reading.png" alt="Reading" /></button></div>
+                <div class="column is-one-quarter"><button class="interest-image-tile"><img src="../assets/img/interests/singing.png" alt="Singing" /></button></div>
 
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/blocks.png" alt="Blocks" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/bowling.png" alt="Bowling" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/cooking.png" alt="Cooking" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/games.png" alt="Games" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/movies.png" alt="Movies" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/music.png" alt="Music" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/piano.png" alt="Piano" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/puzzles.png" alt="Puzzles" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/Reading.png" alt="Reading" />
-                    </button>
-                </div>
-
-                <div class="column is-one-quarter">
-                    <button class="interest-image-tile">
-                        <img src="../assets/img/interests/singing.png" alt="Singing" />
-                    </button>
-                </div>
             </div>
         </div>
 
         <!-- Formulier -->
-        <form id="interest-form" action="character.html" method="post">
+        <form id="interest-form">
             <div class="field mt-5">
                 <label class="label is-size-7 has-text-white">What is your favourite movie or book?</label>
                 <div class="control">
@@ -121,7 +64,7 @@
             <!-- Submit knop -->
             <div class="field mt-4">
                 <div class="control">
-                    <button type="submit" class="button next-button is-fullwidth has-text-weight-bold">
+                    <button type="submit" class="button next-button is-fullwidth has-text-weight-bold" disabled>
                         Next step
                     </button>
                 </div>
@@ -157,12 +100,13 @@
     }
 
     tiles.forEach(tile => {
-        tile.addEventListener('click', () => {
+        tile.addEventListener('click', (e) => {
+            e.preventDefault();
             if (tile.classList.contains('selected')) {
                 tile.classList.remove('selected');
             } else {
-                const currentSelected = document.querySelectorAll('.interest-image-tile.selected');
-                if (currentSelected.length < 4) {
+                const selected = document.querySelectorAll('.interest-image-tile.selected');
+                if (selected.length < 4) {
                     tile.classList.add('selected');
                 }
             }
@@ -172,6 +116,11 @@
 
     inputs.forEach(input => {
         input.addEventListener('input', updateFormState);
+    });
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // voorkomt 405
+        window.location.href = "character.html"; // geen data in URL
     });
 </script>
 
